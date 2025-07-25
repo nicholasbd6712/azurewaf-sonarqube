@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+  <!-- Azure WAF DRS 2.1 Rule Mappings for SonarQube -->
+  
+  <!-- SQL Injection Rules (Azure WAF DRS Rule 942xxx series) -->
+  <rule>
+    <key>azure-waf-sql-injection-942100</key>
+    <name>SQL Injection Attack Detected via libinjection</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 942100 - SQL Injection Attack Detected via libinjection.
+      Detects SQL injection patterns in user input that could compromise database security.
+    </description>
+    <severity>CRITICAL</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>30min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>sql-injection</tag>
+      <tag>owasp-a03</tag>
+      <tag>cwe-89</tag>
+      <tag>sans-top25-porous</tag>
+    </tags>
+  </rule>
+
+  <!-- XSS Rules (Azure WAF DRS Rule 941xxx series) -->
+  <rule>
+    <key>azure-waf-xss-941100</key>
+    <name>XSS Attack Detected via libinjection</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 941100 - XSS Attack Detected via libinjection.
+      Detects cross-site scripting patterns that could lead to client-side code execution.
+    </description>
+    <severity>HIGH</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>20min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>xss</tag>
+      <tag>owasp-a07</tag>
+      <tag>cwe-79</tag>
+    </tags>
+  </rule>
+
+  <!-- Remote File Inclusion (Azure WAF DRS Rule 930xxx series) -->
+  <rule>
+    <key>azure-waf-rfi-930100</key>
+    <name>Remote File Inclusion Attack</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 930100 - Remote File Inclusion Attack.
+      Detects attempts to include remote files that could lead to code execution.
+    </description>
+    <severity>CRITICAL</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>45min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>rfi</tag>
+      <tag>owasp-a03</tag>
+      <tag>cwe-98</tag>
+    </tags>
+  </rule>
+
+  <!-- Local File Inclusion (Azure WAF DRS Rule 930xxx series) -->
+  <rule>
+    <key>azure-waf-lfi-930110</key>
+    <name>Local File Inclusion Attack</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 930110 - Local File Inclusion Attack.
+      Detects attempts to include local files outside the web root.
+    </description>
+    <severity>HIGH</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>30min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>lfi</tag>
+      <tag>owasp-a03</tag>
+      <tag>cwe-22</tag>
+    </tags>
+  </rule>
+
+  <!-- Command Injection (Azure WAF DRS Rule 932xxx series) -->
+  <rule>
+    <key>azure-waf-command-injection-932100</key>
+    <name>Remote Command Execution</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 932100 - Remote Command Execution.
+      Detects attempts to execute system commands through user input.
+    </description>
+    <severity>CRITICAL</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>60min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>command-injection</tag>
+      <tag>owasp-a03</tag>
+      <tag>cwe-78</tag>
+    </tags>
+  </rule>
+
+  <!-- Session Fixation (Azure WAF DRS Rule 943xxx series) -->
+  <rule>
+    <key>azure-waf-session-fixation-943100</key>
+    <name>Session Fixation Attack</name>
+    <description>
+      Maps to Azure WAF DRS 2.1 Rule 943100 - Session Fixation Attack.
+      Detects attempts to fix user sessions for unauthorized access.
+    </description>
+    <severity>MEDIUM</severity>
+    <type>VULNERABILITY</type>
+    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
+    <remediationFunctionBaseEffort>25min</remediationFunctionBaseEffort>
+    <tags>
+      <tag>azure-waf</tag>
+      <tag>session-fixation</tag>
+      <tag>owasp-a07</tag>
+      <tag>cwe-384</tag>
+    </tags>
+  </rule>
+
+</rules>

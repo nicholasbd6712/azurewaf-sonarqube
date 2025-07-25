@@ -1,0 +1,31 @@
+{
+  "name": "azure-waf-drs-sonarqube-integration",
+  "version": "1.0.0",
+  "description": "Azure WAF DRS 2.1 integration with SonarQube for enhanced security scanning",
+  "scripts": {
+    "sonar-scan": "sonar-scanner",
+    "security-scan": "sonar-scanner -Dsonar.profile=azure-waf-security",
+    "install-sonar": "npm install -g sonarqube-scanner",
+    "generate-report": "sonar-scanner -Dsonar.analysis.mode=preview -Dsonar.issuesReport.html.enable=true"
+  },
+  "devDependencies": {
+    "sonarqube-scanner": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-security": "^1.7.1"
+  },
+  "sonarQubeIntegration": {
+    "azureWafDrs": {
+      "version": "2.1",
+      "mappedRules": [
+        "941100", "941110", "941120", "941130", "941140", "941150",
+        "942100", "942110", "942120", "942130", "942140", "942150",
+        "930100", "930110", "930120", "930130",
+        "932100", "932110", "932120",
+        "943100", "943110", "943120"
+      ],
+      "customProfile": "azure-waf-security"
+    }
+  }
+}
